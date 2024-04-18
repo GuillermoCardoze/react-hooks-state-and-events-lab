@@ -3,13 +3,15 @@ import Item from "./Item";
 
 function ShoppingList({ items }) {
     const [selectedCategory, setSelectedCategory] = useState("All")
-    const handleCategory = (e) => {
+    function handleCategory(e){
         setSelectedCategory(e.target.value)
     }
     const filteredItems = items.filter(item => {
       if (selectedCategory === "All") return true
       return item.category === selectedCategory})
-    console.log(filteredItems)  
+
+    console.log(filteredItems)
+      
     return (
     <div className="ShoppingList">
       <div className="Filter">
